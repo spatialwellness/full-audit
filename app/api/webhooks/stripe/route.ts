@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
                 Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
               },
               body: JSON.stringify({
-                from: "Full Audit Payments <onboarding@resend.dev>",
+                from: "Spatial Wellness Payments <hello@spatial-wellness.com>",
                 to: "hello@spatial-wellness.com",
                 subject: `Payment received - Full Audit (${session.customer_email})`,
                 text: `New Full Audit payment received!\n\nSession: ${session.id}\nEmail: ${session.customer_email}\nAmount: ${((session.amount_total || 0) / 100).toFixed(2)} ${(session.currency || "eur").toUpperCase()}\nPaid at: ${new Date().toISOString()}\n\nThe customer will now complete their intake form.`,
@@ -75,10 +75,10 @@ export async function POST(request: NextRequest) {
                 Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
               },
               body: JSON.stringify({
-                from: "House of Return <onboarding@resend.dev>",
+                from: "Spatial Wellness <hello@spatial-wellness.com>",
                 to: session.customer_email,
                 subject: "Your Full Spatial Wellness Audit - next steps",
-                text: `Thank you for booking your Full Spatial Wellness Audit!\n\nYour payment has been received. Here is what happens next:\n\n1. Complete your intake form at: ${baseUrl}/intake\n2. Upload your photos (minimum 8) and any floorplan you have\n3. We will review your submission within 1 business day\n4. Your personalised report and results page will be ready within 5 working days\n\nIf you have any questions, reply to this email or contact hello@spatial-wellness.com\n\nThank you,\nElianne\nHouse of Return`,
+                text: `Thank you for booking your Full Spatial Wellness Audit!\n\nYour payment has been received. Here is what happens next:\n\n1. Complete your intake form at: ${baseUrl}/intake\n2. Upload your photos (minimum 8) and any floorplan you have\n3. We will review your submission within 1 business day\n4. Your personalised report and results page will be ready within 5 working days\n\nIf you have any questions, reply to this email or contact hello@spatial-wellness.com\n\nThank you,\nElianne\nSpatial Wellness`,
               }),
             });
           } catch (e) {

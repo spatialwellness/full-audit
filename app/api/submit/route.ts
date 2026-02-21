@@ -144,8 +144,8 @@ export async function POST(request: NextRequest) {
             Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: "Full Audit <onboarding@resend.dev>",
-            to: "home@houseofreturn.nl",
+            from: "Spatial Wellness Full Audit <hello@spatial-wellness.com>",
+            to: "hello@spatial-wellness.com",
             subject: `New Full Audit: ${body.companyName || "Unknown"} (${body.contactEmail})`,
             text: `New Full Spatial Wellness Audit submission\n\nID: ${id}\nCompany: ${body.companyName}\nContact: ${body.contactName} (${body.contactEmail})\nIndustry: ${body.industry}\nEmployees: ${body.employeeCount}\nSpace: ${body.totalSqm}m2, ${body.numberOfSpaces} rooms, ${body.spaceType}\n\nOverall Score: ${scores.overall.toFixed(1)}/4\n\n${scoreLines}\n\nResults URL: ${process.env.NEXT_PUBLIC_BASE_URL || "https://full-audit.vercel.app"}/results/${id}`,
           }),
