@@ -1026,7 +1026,8 @@ export default function IntakePage() {
                     />
                   </div>
                 </div>
-              ))}
+              );
+            })}
 
               {/* Overall wellbeing */}
               <div className="bg-white rounded-2xl p-6 border border-brand-rose/20">
