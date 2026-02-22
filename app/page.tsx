@@ -31,7 +31,7 @@ export default function HomePage() {
       if (data.url) {
         window.location.href = data.url;
       } else {
-        setError("Something went wrong. Please try again or email hello@spatial-wellness.com");
+        setError("Something went wrong. Please try again or email hello@houseofreturn.nl");
       }
     } catch {
       setError("Connection error. Please try again.");
@@ -46,13 +46,13 @@ export default function HomePage() {
       <section className="bg-brand-dark text-brand-cream py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-brand-orange font-lora text-sm tracking-widest uppercase mb-4">
-            House of Return
+            Spatial Wellness
           </p>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl mb-6">
-            Full Spatial Wellness Audit
+            Full Home Office Audit
           </h1>
           <p className="text-brand-rose font-lora text-lg md:text-xl leading-relaxed">
-            A comprehensive analysis of how your workplace affects your people.
+            A comprehensive analysis of your home office environment.
             Eight categories. Personalised scores. A concrete action plan.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm font-lora">
@@ -162,10 +162,10 @@ export default function HomePage() {
           <div className="bg-white rounded-2xl shadow-sm border border-brand-rose/30 overflow-hidden">
             <div className="bg-brand-dark px-8 py-6 text-center">
               <p className="text-brand-rose font-lora text-sm uppercase tracking-widest mb-1">
-                Full Spatial Wellness Audit
+                Full Home Office Audit
               </p>
               <div className="text-brand-cream">
-                <span className="font-playfair text-5xl">€197</span>
+                <span className="font-playfair text-5xl">€97</span>
                 <span className="font-lora text-brand-rose ml-2">one-time</span>
               </div>
             </div>
