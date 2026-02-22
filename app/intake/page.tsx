@@ -1,6 +1,18 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { 
+  Lightbulb,
+  Volume2,
+  Thermometer,
+  LayoutGrid,
+  Target,
+  Leaf,
+  Sparkles,
+  Diamond,
+  Armchair,
+  Camera
+} from "lucide-react";
 
 const TOTAL_STEPS = 5;
 
@@ -791,7 +803,7 @@ export default function IntakePage() {
                 }`}
                 onClick={() => photoRef.current?.click()}
               >
-                <span className="text-4xl block mb-3">📸</span>
+                <Camera className="w-12 h-12 text-brand-green mx-auto mb-3" strokeWidth={1.5} />
                 <p className="font-playfair text-xl text-brand-dark mb-2">
                   Upload your photos
                 </p>
@@ -897,7 +909,7 @@ export default function IntakePage() {
                   id: "q_lighting",
                   detailId: "q_lighting_detail",
                   label: "Lighting",
-                  emoji: "💡",
+                  icon: Lightbulb,
                   hint: "Think about natural light levels, artificial lighting quality, glare, and any dark spots.",
                   detailPrompt: "Tell us more about your lighting (optional)",
                   detailPlaceholder:
@@ -907,7 +919,7 @@ export default function IntakePage() {
                   id: "q_acoustics",
                   detailId: "q_acoustics_detail",
                   label: "Acoustics and noise",
-                  emoji: "🔊",
+                  icon: Volume2,
                   hint: "Consider background noise levels, echo, concentration disruptions, and whether you can have private conversations.",
                   detailPrompt: "Tell us more about noise in your space (optional)",
                   detailPlaceholder:
@@ -917,7 +929,7 @@ export default function IntakePage() {
                   id: "q_temperature",
                   detailId: "q_temperature_detail",
                   label: "Temperature and air quality",
-                  emoji: "🌡️",
+                  icon: Thermometer,
                   hint: "Think about whether the space is too hot, too cold, stuffy, or drafty throughout the year.",
                   detailPrompt: "Tell us more about temperature and air in your space (optional)",
                   detailPlaceholder:
@@ -927,7 +939,7 @@ export default function IntakePage() {
                   id: "q_layout",
                   detailId: "q_layout_detail",
                   label: "Space and layout",
-                  emoji: "📐",
+                  icon: LayoutGrid,
                   hint: "Think about whether the space works for how you actually work - flow, orientation, desk placement.",
                   detailPrompt: "Tell us more about the layout (optional)",
                   detailPlaceholder:
@@ -937,7 +949,7 @@ export default function IntakePage() {
                   id: "q_privacy",
                   detailId: "q_privacy_detail",
                   label: "Privacy and focus",
-                  emoji: "🎯",
+                  icon: Target,
                   hint: "Consider whether people can find quiet places to concentrate, and whether conversations remain confidential.",
                   detailPrompt: "Tell us more about privacy and focus (optional)",
                   detailPlaceholder:
@@ -947,7 +959,7 @@ export default function IntakePage() {
                   id: "q_biophilia",
                   detailId: "q_biophilia_detail",
                   label: "Biophilia and nature",
-                  emoji: "🌿",
+                  icon: Leaf,
                   hint: "Think about plants, natural materials, daylight, views of the outside, and connection to the natural world.",
                   detailPrompt: "Tell us more about nature in your space (optional)",
                   detailPlaceholder:
@@ -957,7 +969,7 @@ export default function IntakePage() {
                   id: "q_sensory",
                   detailId: "q_sensory_detail",
                   label: "Sensory comfort",
-                  emoji: "✨",
+                  icon: Sparkles,
                   hint: "Think about visual clutter, smells, uncomfortable textures, harsh lighting, or anything that feels irritating or overwhelming. Flickering lights, humming electronics, and strong smells can be particularly impactful for neurodivergent team members.",
                   detailPrompt: "Tell us more about sensory comfort (optional)",
                   detailPlaceholder:
@@ -967,7 +979,7 @@ export default function IntakePage() {
                   id: "q_neuro",
                   detailId: "q_neuro_detail",
                   label: "Neuro-inclusive design",
-                  emoji: "◆",
+                  icon: Diamond,
                   hint: "Does the space accommodate different ways of processing information and managing energy? Think about quiet zones, movement options, fidget-friendly culture, adjustable everything, and whether people can control their sensory environment.",
                   detailPrompt: "Tell us more about neuro-inclusive features (optional)",
                   detailPlaceholder:
@@ -977,23 +989,25 @@ export default function IntakePage() {
                   id: "q_ergonomics",
                   detailId: "q_ergonomics_detail",
                   label: "Ergonomics",
-                  emoji: "💺",
+                  icon: Armchair,
                   hint: "Think about whether chairs, desks, screens, and equipment support healthy posture and comfortable working.",
                   detailPrompt: "Tell us more about ergonomics (optional)",
                   detailPlaceholder:
                     "e.g. Chairs are old and unsupportive, screens cannot be height-adjusted...",
                 },
-              ].map((q) => (
-                <div
-                  key={q.id}
-                  className="bg-white rounded-2xl p-6 border border-brand-rose/20"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">{q.emoji}</span>
-                    <h2 className="font-playfair text-xl text-brand-dark">
-                      {q.label}
-                    </h2>
-                  </div>
+              ].map((q) => {
+                const IconComponent = q.icon;
+                return (
+                  <div
+                    key={q.id}
+                    className="bg-white rounded-2xl p-6 border border-brand-rose/20"
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <IconComponent className="w-6 h-6 text-brand-green" strokeWidth={1.5} />
+                      <h2 className="font-playfair text-xl text-brand-dark">
+                        {q.label}
+                      </h2>
+                    </div>
                   <ScoreSelect
                     id={q.id}
                     label="How would you rate this?"

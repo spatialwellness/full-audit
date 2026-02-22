@@ -5,6 +5,17 @@ import { colorPalettes } from "@/lib/color-palettes";
 import { layoutExamples } from "@/lib/layout-examples";
 import { AuditResult, AuditScores, ActionItem, CATEGORY_LABELS } from "@/lib/types";
 import { recalculateScore } from "@/lib/scoring";
+import { 
+  Lightbulb,
+  Volume2,
+  Thermometer,
+  LayoutGrid,
+  Target,
+  Leaf,
+  Sparkles,
+  Armchair,
+  BarChart3
+} from "lucide-react";
 
 const MOCK_RESULT: AuditResult = {
   id: "demo",
@@ -167,12 +178,12 @@ const TOOLKIT_ITEM_IDS = new Set([
 function ScoreBar({
   label,
   score,
-  emoji,
+  icon,
   educationText,
 }: {
   label: string;
   score: number;
-  emoji: string;
+  icon: any;
   educationText?: string;
 }) {
   const pct = Math.round((score / 5) * 100);
@@ -187,11 +198,13 @@ function ScoreBar({
       ? "#15803d"
       : "#14532d";
 
+  const IconComponent = icon;
+
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span>{emoji}</span>
+          <IconComponent className="w-5 h-5 text-brand-green" strokeWidth={1.5} />
           <span className="font-lora font-medium text-brand-dark text-sm">
             {label}
           </span>
@@ -317,15 +330,15 @@ function ActionItemCard({
   );
 }
 
-const categoryEmojis: Record<string, string> = {
-  lighting: "💡",
-  acoustics: "🔊",
-  temperature: "🌡️",
-  layout: "📐",
-  privacy: "🎯",
-  biophilia: "🌿",
-  sensory: "✨",
-  ergonomics: "💺",
+const categoryIcons: Record<string, any> = {
+  lighting: Lightbulb,
+  acoustics: Volume2,
+  temperature: Thermometer,
+  layout: LayoutGrid,
+  privacy: Target,
+  biophilia: Leaf,
+  sensory: Sparkles,
+  ergonomics: Armchair,
 };
 
 export default function ResultsPage({ params }: { params: { id: string } }) {
@@ -545,7 +558,7 @@ export default function ResultsPage({ params }: { params: { id: string } }) {
                   key={cat}
                   label={CATEGORY_LABELS[cat]}
                   score={scores[cat]}
-                  emoji={categoryEmojis[cat] || "📊"}
+                  icon={categoryIcons[cat] || BarChart3}
                   educationText={CATEGORY_EDUCATION[cat]}
                 />
               )

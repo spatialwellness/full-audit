@@ -1,6 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { 
+  BarChart3, 
+  ClipboardList, 
+  Palette, 
+  Ruler, 
+  Link, 
+  Camera,
+  Lightbulb,
+  Volume2,
+  Thermometer,
+  LayoutGrid,
+  Target,
+  Leaf,
+  Sparkles,
+  Armchair
+} from "lucide-react";
 
 export default function HomePage() {
   const [email, setEmail] = useState("");
@@ -78,49 +94,52 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                icon: "📊",
+                icon: BarChart3,
                 title: "8-category scored analysis",
                 desc: "Lighting, acoustics, temperature, layout, privacy, biophilia, sensory comfort, and ergonomics - each scored and explained.",
               },
               {
-                icon: "📋",
+                icon: ClipboardList,
                 title: "Phased action plan",
                 desc: "Quick wins under 100 euros, medium-term improvements, and longer-term investments - all with estimated costs.",
               },
               {
-                icon: "🎨",
+                icon: Palette,
                 title: "Colour palette recommendations",
                 desc: "Farrow and Ball-referenced palettes with hex codes and RAL equivalents, chosen for your specific space and challenges.",
               },
               {
-                icon: "📐",
+                icon: Ruler,
                 title: "Layout suggestions",
                 desc: "Two or three relevant spatial layout examples from our library, with diagrams and explanations of why they work.",
               },
               {
-                icon: "🔗",
+                icon: Link,
                 title: "Personal results page",
                 desc: "An interactive page with your scores, a checkable action list, and colour palettes - live for at least one year.",
               },
               {
-                icon: "📸",
+                icon: Camera,
                 title: "Photo-based insights",
                 desc: "We analyse your photos to identify specific issues and opportunities in your actual space.",
               },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-xl p-6 border border-brand-rose/30"
-              >
-                <span className="text-2xl mb-3 block">{item.icon}</span>
-                <h3 className="font-playfair text-lg text-brand-dark mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-brand-dark/70 font-lora text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+            ].map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="bg-white rounded-xl p-6 border border-brand-rose/30"
+                >
+                  <IconComponent className="w-8 h-8 text-brand-green mb-3" strokeWidth={1.5} />
+                  <h3 className="font-playfair text-lg text-brand-dark mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-brand-dark/70 font-lora text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -133,25 +152,28 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: "Lighting", emoji: "💡" },
-              { label: "Acoustics", emoji: "🔊" },
-              { label: "Temperature and Air", emoji: "🌡️" },
-              { label: "Space and Layout", emoji: "📐" },
-              { label: "Privacy and Focus", emoji: "🎯" },
-              { label: "Biophilia and Nature", emoji: "🌿" },
-              { label: "Sensory Comfort", emoji: "✨" },
-              { label: "Ergonomics", emoji: "💺" },
-            ].map((cat) => (
-              <div
-                key={cat.label}
-                className="bg-brand-cream/10 rounded-lg p-4 text-center"
-              >
-                <span className="text-2xl block mb-2">{cat.emoji}</span>
-                <span className="font-lora text-sm text-brand-rose">
-                  {cat.label}
-                </span>
-              </div>
-            ))}
+              { label: "Lighting", icon: Lightbulb },
+              { label: "Acoustics", icon: Volume2 },
+              { label: "Temperature and Air", icon: Thermometer },
+              { label: "Space and Layout", icon: LayoutGrid },
+              { label: "Privacy and Focus", icon: Target },
+              { label: "Biophilia and Nature", icon: Leaf },
+              { label: "Sensory Comfort", icon: Sparkles },
+              { label: "Ergonomics", icon: Armchair },
+            ].map((cat) => {
+              const IconComponent = cat.icon;
+              return (
+                <div
+                  key={cat.label}
+                  className="bg-brand-cream/10 rounded-lg p-4 text-center"
+                >
+                  <IconComponent className="w-7 h-7 text-brand-rose mx-auto mb-2" strokeWidth={1.5} />
+                  <span className="font-lora text-sm text-brand-rose">
+                    {cat.label}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
