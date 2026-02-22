@@ -14,7 +14,8 @@ import {
   Leaf,
   Sparkles,
   Armchair,
-  BarChart3
+  BarChart3,
+  Gift
 } from "lucide-react";
 
 const MOCK_RESULT: AuditResult = {
@@ -545,9 +546,12 @@ export default function ResultsPage({ params }: { params: { id: string } }) {
       <div className="max-w-3xl mx-auto px-6 py-12 space-y-16">
         {/* Free Implementation Call CTA */}
         <div className="bg-gradient-to-r from-brand-orange/10 to-brand-green/10 border-2 border-brand-orange/30 rounded-2xl p-8 text-center">
-          <p className="font-playfair text-2xl text-brand-dark mb-3">
-            🎁 Claim Your Free 30-Minute Implementation Call
-          </p>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Gift className="w-7 h-7 text-brand-orange" strokeWidth={2} />
+            <p className="font-playfair text-2xl text-brand-dark">
+              Claim Your Free 30-Minute Implementation Call
+            </p>
+          </div>
           <p className="font-lora text-brand-dark/70 mb-4 max-w-2xl mx-auto">
             You've got your audit results — now let me help you execute them. Book your complimentary call within 7 days to get personal guidance on product selection, budget prioritization, and avoiding mistakes.
           </p>

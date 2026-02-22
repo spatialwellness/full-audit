@@ -15,7 +15,8 @@ import {
   Target,
   Leaf,
   Sparkles,
-  Armchair
+  Armchair,
+  Gift
 } from "lucide-react";
 
 export default function HomePage() {
@@ -65,33 +66,33 @@ export default function HomePage() {
             Spatial Wellness
           </p>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl mb-6">
-            Fix Your Home Office Health in 5 Days
+            A Home Office That Actually Works For You
           </h1>
           <p className="text-brand-rose font-lora text-lg md:text-xl leading-relaxed mb-8">
-            Stop the headaches, brain fog, and sensory overload. Get a professional audit, personalised action plan, and free implementation call — no expensive designer needed.
+            Stop the headaches, brain fog, and visual chaos. Get a workspace that supports your health AND looks beautiful — with a professional audit, DIY action plan, and free implementation call. No expensive designer needed.
           </p>
           <div className="bg-brand-cream/10 rounded-2xl p-6 max-w-2xl mx-auto mb-8">
-            <p className="font-lora text-brand-cream mb-4">Most people struggling with:</p>
+            <p className="font-lora text-brand-cream mb-4">This is for you if you want to:</p>
             <div className="grid md:grid-cols-2 gap-3 text-left">
               <div className="flex items-start gap-2">
                 <span className="text-brand-orange mt-1">✓</span>
-                <span className="font-lora text-sm text-brand-rose">Afternoon headaches & eye strain</span>
+                <span className="font-lora text-sm text-brand-rose">Stop afternoon headaches & eye strain</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-brand-orange mt-1">✓</span>
-                <span className="font-lora text-sm text-brand-rose">Can't focus or get into flow</span>
+                <span className="font-lora text-sm text-brand-rose">Finally focus & get into flow</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-brand-orange mt-1">✓</span>
-                <span className="font-lora text-sm text-brand-rose">Sensory overwhelm (ADHD/autism)</span>
+                <span className="font-lora text-sm text-brand-rose">Create a workspace you actually enjoy</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-brand-orange mt-1">✓</span>
-                <span className="font-lora text-sm text-brand-rose">Back/neck pain from poor setup</span>
+                <span className="font-lora text-sm text-brand-rose">Fix back/neck pain from poor setup</span>
               </div>
             </div>
             <p className="font-lora text-brand-cream mt-4 text-sm">
-              ...don't need a designer. They need to understand <em>what their space is doing to them</em>.
+              You don't need an expensive designer. You need to understand <em>what your space is doing to you</em> — and how to fix it yourself.
             </p>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm font-lora">
@@ -115,7 +116,7 @@ export default function HomePage() {
             What you get for €97
           </h2>
           <p className="text-center font-lora text-brand-dark/60 mb-10 max-w-2xl mx-auto">
-            Everything you need to fix your workspace health yourself — no designer, no guesswork, no ongoing costs.
+            Everything you need to create a workspace that supports your health and looks beautiful — no designer, no guesswork, no ongoing costs.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {[
@@ -221,11 +222,11 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-1">✗</span>
-                    <span>Focus on aesthetics over health</span>
+                    <span>Prioritize looks without understanding health impact</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-1">✗</span>
-                    <span>Not understand neurodivergence</span>
+                    <span>Rarely understand neurodivergence or sensory needs</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-1">✗</span>
@@ -246,11 +247,11 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brand-green mt-1">✓</span>
-                    <span>Health and neuroscience-based</span>
+                    <span>Health + aesthetics based on neuroscience</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brand-green mt-1">✓</span>
-                    <span>Designed for ADHD/autism/HSP</span>
+                    <span>Includes guidance for ADHD/autism/HSP</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brand-green mt-1">✓</span>
@@ -384,9 +385,12 @@ export default function HomePage() {
 
             {/* Bonus call details */}
             <div className="bg-brand-orange/10 border-2 border-brand-orange/30 rounded-xl p-6 text-center">
-              <p className="font-playfair text-brand-dark text-xl mb-2">
-                🎁 Free 30-Minute Implementation Call
-              </p>
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <Gift className="w-6 h-6 text-brand-orange" strokeWidth={2} />
+                <p className="font-playfair text-brand-dark text-xl">
+                  Free 30-Minute Implementation Call
+                </p>
+              </div>
               <p className="font-lora text-sm text-brand-dark/70 mb-3">
                 After you receive your audit results, book your complimentary call. I'll help you:
               </p>
