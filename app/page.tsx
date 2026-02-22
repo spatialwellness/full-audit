@@ -388,9 +388,9 @@ export default function HomePage() {
                 🎁 Free 30-Minute Implementation Call
               </p>
               <p className="font-lora text-sm text-brand-dark/70 mb-3">
-                After you receive your audit results, email me to schedule your complimentary call. I'll help you:
+                After you receive your audit results, book your complimentary call. I'll help you:
               </p>
-              <ul className="text-left font-lora text-sm text-brand-dark/80 space-y-2 max-w-md mx-auto mb-3">
+              <ul className="text-left font-lora text-sm text-brand-dark/80 space-y-2 max-w-md mx-auto mb-4">
                 <li className="flex items-start gap-2">
                   <span className="text-brand-orange mt-1">✓</span>
                   <span>Choose the right products and brands</span>
@@ -408,6 +408,14 @@ export default function HomePage() {
                   <span>Avoid expensive mistakes</span>
                 </li>
               </ul>
+              <a
+                href="https://calendly.com/hello-spatial-wellness"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-brand-orange hover:bg-brand-orange/90 text-white font-playfair px-6 py-3 rounded-lg transition-all mb-3"
+              >
+                Preview Available Times →
+              </a>
               <p className="font-lora text-xs text-brand-dark/60 italic">
                 This is normally €95. You get it free when you book within 7 days of receiving your results.
               </p>
@@ -447,7 +455,7 @@ export default function HomePage() {
               {
                 step: "5",
                 title: "Book your free 30-min call",
-                desc: "Email me within 7 days to schedule your complimentary implementation call. I'll help you prioritize, choose products, and avoid mistakes.",
+                desc: "Within 7 days of receiving your results, use your personal Calendly link to schedule your complimentary implementation call. I'll help you prioritize, choose products, and avoid mistakes.",
               },
               {
                 step: "6",

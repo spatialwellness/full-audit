@@ -543,6 +543,27 @@ export default function ResultsPage({ params }: { params: { id: string } }) {
       )}
 
       <div className="max-w-3xl mx-auto px-6 py-12 space-y-16">
+        {/* Free Implementation Call CTA */}
+        <div className="bg-gradient-to-r from-brand-orange/10 to-brand-green/10 border-2 border-brand-orange/30 rounded-2xl p-8 text-center">
+          <p className="font-playfair text-2xl text-brand-dark mb-3">
+            🎁 Claim Your Free 30-Minute Implementation Call
+          </p>
+          <p className="font-lora text-brand-dark/70 mb-4 max-w-2xl mx-auto">
+            You've got your audit results — now let me help you execute them. Book your complimentary call within 7 days to get personal guidance on product selection, budget prioritization, and avoiding mistakes.
+          </p>
+          <p className="font-lora text-sm text-brand-dark/60 mb-6 italic">
+            Normally €95 — yours free as part of your audit package.
+          </p>
+          <a
+            href="https://calendly.com/hello-spatial-wellness"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-brand-orange hover:bg-brand-orange/90 text-white font-playfair text-lg px-8 py-4 rounded-xl transition-all shadow-lg"
+          >
+            Book My Free Call →
+          </a>
+        </div>
+
         {/* Scores by category */}
         <section>
           <h2 className="font-playfair text-3xl text-brand-dark mb-2">
